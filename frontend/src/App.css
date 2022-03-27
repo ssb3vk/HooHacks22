@@ -71,3 +71,12 @@ cursor: pointer;
     background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
   }
 
+
+  * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p { text-align: center }
+h1 { text-align: center }
+h2 { text-align: center }
