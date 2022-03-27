@@ -87,6 +87,8 @@ function App() {
   
   return (
     <div>
+      <h1>SmartUP!</h1>
+      <h2>We don't dumb things down. We empower students and SMART things UP.</h2>
       <SearchBox return_data={handle_organic_results}/>
       { articles.map((article_i) => 
         <Page article={article_i} key={article_i.position}>
