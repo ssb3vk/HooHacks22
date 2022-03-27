@@ -5,14 +5,15 @@ function useScrapes(){
     const [scrapes, setScrapes] = useState({
         title: "",
         url: "",
-        level: 0,
+        fk: 0,
     });
 
     useEffect(function (){
 
         (async () => {
             console.log("Mounting or updating");
-            const res = await fetch('http://localhost:2093/data');
+            const res = await fetch('/data');
+            // await console.log(res);
             const data = await res.json();
             console.log(data);
             setScrapes(data);

@@ -10,7 +10,7 @@ export default function Data(){
             <h2>Your Data</h2>
             <h3>{scrapeData.title}</h3>
             <p>{scrapeData.url}</p>
-            <p>{scrapeData.level}</p>
+            <p>{scrapeData.fk}</p>
         </div>
     );
 }

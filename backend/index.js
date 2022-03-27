@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const express = require('express');
 const app = express();
-const PORT = 1337;
+const PORT = 3001;
 
 // URL for data
 const URL = "https://www.history.com/topics/japan/russo-japanese-war";
@@ -31,7 +31,7 @@ const fk = async (url) => {
     return 69; // change to use https://github.com/dana-ross/flesch-kincaid
 };
 
-app.get('/', async (req, res) => {
+app.get('/data', async (req, res) => {
     const [t, s] = await Promise.all([title(URL), fk(URL)]);
     res.json({title: t, fk: s, url: URL});
 });
