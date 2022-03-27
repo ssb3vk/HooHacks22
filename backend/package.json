@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "cross-fetch": "^3.1.5",
+    "express": "^4.17.3",
+    "flesch-kincaid": "github:daveross/flesch-kincaid",
+    "node-fetch": "^3.2.3",
+    "pronouncing": "github:aparrish/pronouncingjs"
+  }
 }
