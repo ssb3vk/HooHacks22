@@ -80,6 +80,10 @@ function App() {
             return("Hard")
         }
   }
+
+  const handleClick = (site) => {
+    window.open(site, "_blank")
+  }
   
   return (
     <div>
@@ -96,14 +100,21 @@ function App() {
             console.log(valx);
             return ( 
                 <div key={keyx}>
-                    <div  className={colorDecider(keyx)}> Grade : {keyx} </div>
+                    <div  className={colorDecider(keyx)}> Reading Level : {keyx} </div>
                     <ul>
                         {valx.map((element) => {
-                            return (<div href={element.link} target="_blank" rel="noopener noreferrer" key={element.position}><li> 
+                            return (
+                            <div key={element.position}>
+                              <li>
+                              <button onClick={() => {handleClick(element.link);}}>
                                 <h2>{element.title}</h2>
                                 <h2>{element.fk}</h2>
                                 <h3>{element.domain}</h3>
-                            </li></div>);
+                                <p>14 other students found this helpful.</p>
+                              </button>
+                          </li>
+                            </div>
+                            );
                         })}
                     </ul> 
                 </div>
