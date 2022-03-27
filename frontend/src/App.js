@@ -29,18 +29,18 @@ function App() {
   }
 
   const add_to_dic = useCallback((key1, val1) => {
-    console.log("Adding key");
-    console.log(key1);
-    console.log("Adding value");
-    console.log(val1);
+    // console.log("Adding key");
+    // console.log(key1);
+    // console.log("Adding value");
+    // console.log(val1);
     if (key1 in articleDict){
       setArticleDict(prevDict => ({...prevDict, [key1]: [...prevDict[key1], val1]}));
     }
     else {
       setArticleDict(prevDict => ({...prevDict, [key1]: [val1,]}));
     }
-    console.log(JSON.stringify(articleDict));
-    console.log(articleDict[key1]);
+    // console.log(JSON.stringify(articleDict));
+    // console.log(articleDict[key1]);
   }, [setArticleDict]);
 
 
@@ -97,28 +97,34 @@ function App() {
        */}
        <div className="resultsContainer">
         {Object.entries(articleDict).map(([keyx, valx]) => {
-            console.log(valx);
-            return ( 
-                <div key={keyx}>
-                    <div  className={colorDecider(keyx)}> Reading Level : {keyx} </div>
-                    <ul>
-                        {valx.map((element) => {
-                            return (
-                            <div key={element.position}>
-                              <li>
-                              <button onClick={() => {handleClick(element.link);}}>
-                                <h2>{element.title}</h2>
-                                <h2>{element.fk}</h2>
-                                <h3>{element.domain}</h3>
-                                <p>14 other students found this helpful.</p>
-                              </button>
-                          </li>
-                            </div>
-                            );
-                        })}
-                    </ul> 
-                </div>
-            );
+            // console.log(valx);
+            if (keyx > 0) {
+              return ( 
+                  <div key={keyx}>
+                      <div  className={colorDecider(keyx)}> Reading Level : {keyx} </div>
+                      <ul>
+                          {valx.map((element) => {
+                              return (
+                              <div key={element.position}>
+                                <li>
+                                <button onClick={() => {handleClick(element.link);}}>
+                                  <h2>{element.title}</h2>
+                                  <h2>{element.fk.toFixed(2)}</h2>
+                                  <h3>{element.domain}</h3>
+                                  <p>14 other students found this helpful.</p>
+                                </button>
+                            </li>
+                              </div>
+                              );
+                          })}
+                      </ul> 
+                  </div>
+              );}
+              else{
+                return <></>;
+              }
+            
+
         }
         )}
         </div>
