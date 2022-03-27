@@ -1,6 +1,20 @@
 // JS implementation of Egreedy algorithm found here
 // https://github.com/antonismand/Personalized-News-Recommendation/blob/master/bandits.py
 
+// Find the index of the maximum value in an array
+function argmax(array) {
+    let max = array[0];
+    let argmax = 0;
+
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > max) {
+            argmax = i;
+            max = array[i];
+        }
+    }
+    return argmax;
+}
+
 class Egreedy {
 
     constructor(epsilon) {
@@ -12,15 +26,7 @@ class Egreedy {
     choose_arm(pool_idx) {
         const p = Math.random();
         if (p > this.e) {
-            let argmax = 0;
-            let max = 0;
-            for (i=0; i < pool_idx.length; i++) {
-                if (this.q[i] > max) {
-                    argmax = i;
-                    max = this.q[i];
-                }
-            }
-            return argmax;
+            return argmax(this.q[pool_idx]);
         }
         else {
             return (Math.random() * pool_idx.length);
@@ -34,3 +40,10 @@ class Egreedy {
     }
 
 }
+
+// TODO: Add dataset
+// const eg = new Egreedy(0.2);
+
+// argmax testing
+// const li = [1, 0, 2, 5, 6, 4, 3];
+// console.log(argmax(li));
