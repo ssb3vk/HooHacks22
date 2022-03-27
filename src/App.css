@@ -2,37 +2,72 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.resultsContainer{
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #f39f86;
+  background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Searchbar{
+text-align: left;
+border: none;
+border-radius: 0px;
+margin-top: 70px;
+margin-bottom: 50px;
+margin-left:25px;
+margin-right: 25px;
+padding: 10px 45px;
+}
+
+.Searchbar input{
+  min-width: 30px;
+}
+
+.Submitbutton{
+margin-top: 70px;
+outline: none;
+border-radius: 0px;
+padding: 10px;
+background-image: radial-gradient( circle farthest-corner at 0.8% 1.8%,  rgba(255,104,107,1) 0%, rgba(255,187,103,1) 90.1% );    border: 2px solid black;
+cursor: pointer;
+}
+
+.Hard{
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  max-width: 100px;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+  font-weight: bold;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Mid{
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    max-width: 100px;
+    color: white;
+    background-color: #bf033b;
+    background-image: linear-gradient(315deg, #bf033b 0%, #ffc719 74%);
   }
-}
+
+  .Easy{
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    max-width: 100px;
+    color: white;
+    background-color: #00b712;
+    background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+  }
+
