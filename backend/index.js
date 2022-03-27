@@ -1,4 +1,5 @@
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const cheerio = require("cheerio");
 const express = require('express');
 const app = express();
@@ -12,6 +13,8 @@ const getRawData = (url) => {
     return fetch(url)
        .then((response) => response.text())
        .then((data) => {
+           console.log("fetch data");
+            console.log(data);
           return data;
        });
  };
@@ -39,8 +42,11 @@ const fk = async (url) => {
 };
 
 app.get('/data/:link', async (req, res) => {
-    const URL = req.params.link.replaceAll("%2f", "/");
+    const URL = req.params.link.replace(/%2f/g, '/');
+    // const URL = req.params.link.replaceAll('%2f', '/');
     const [t, b, s] = await Promise.all([title(URL), body(URL), fk(URL)]);
+    console.log("fetch body");
+    console.log(b);
     res.json({title: t, fk: s, url: URL, body: b});
 });
 

@@ -2,17 +2,25 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
+    "cors-anywhere": "^0.4.4",
     "date-fns": "^2.28.0",
+    "flesch-kincaid": "github:daveross/flesch-kincaid",
+    "google-search-results-serpwow": "0.0.14",
     "next": "^12.1.1",
+    "node-fetch": "^3.2.3",
+    "pronouncing": "github:aparrish/pronouncingjs",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webidl-conversions": "^7.0.0",
+    "whatwg-url": "^11.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
