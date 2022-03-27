@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
-    "flesch-kincaid": "github:daveross/flesch-kincaid"
+    "flesch-kincaid": "github:daveross/flesch-kincaid",
+    "pronouncing": "github:aparrish/pronouncingjs"
   }
 }
